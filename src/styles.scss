@@ -1,1 +1,5 @@
 /* -- styles.scss (global styling): -- */
+
+@use 'styles/reset.scss';
+@use 'styles/variables.scss' as variables;
+@use 'styles/fonts.scss';
