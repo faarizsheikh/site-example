@@ -7,21 +7,19 @@
   [class.open]="isOpen"
   [attr.aria-expanded]="isOpen"
   [attr.aria-label]="isOpen ? 'Close menu' : 'Open menu'"
-  aria-controls="burger-menu"
-  (click)="toggleMenu()">
+>
 </button>
-
 
 <!-- BURGER MENU -->
 <nav   id="burger-menu"
        class="burger-menu"
        [class.open]="isOpen"
-       [hidden]="!isOpen">
+>
   <ul>
-    <li><a routerLink="{{ROUTE_LINKS.HOME}}" (click)="closeMenu()">HOME</a></li>
-    <li><a routerLink="{{ROUTE_LINKS.ABOUT}}" (click)="closeMenu()">ABOUT</a></li>
-    <li><a routerLink="{{ROUTE_LINKS.CONTACT}}" (click)="closeMenu()">CONTACT</a></li>
-    <li><a routerLink="{{ROUTE_LINKS.WORK}}" (click)="closeMenu()">WORK</a></li>
+    <li><a routerLink="{{ROUTE_LINKS.HOME}}">HOME</a></li>
+    <li><a routerLink="{{ROUTE_LINKS.ABOUT}}">ABOUT</a></li>
+    <li><a routerLink="{{ROUTE_LINKS.CONTACT}}">CONTACT</a></li>
+    <li><a routerLink="{{ROUTE_LINKS.WORK}}">WORK</a></li>
     <li>
       <a
         href="../../../assets/PDFs/faariz-resume.pdf"
