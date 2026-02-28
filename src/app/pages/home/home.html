@@ -1,1 +1,132 @@
 <!-- home.html: -->
+
+<!-- HERO SECTION -->
+<main class="top-part">
+  <div class="main-intro">
+    <h1>Welcome<br>to my<br>website</h1>
+    <p>
+      I create websites, develop games with Unity, write stories
+      published on KDP and articles on Medium.
+    </p>
+    <a routerLink="{{ROUTE_LINKS.WORK}}" routerLinkActive="active" target="_blank" title="Work page.">MY WORK</a>
+  </div>
+
+  <div class="main-quotes">
+    <p>
+      "The more that you read, the more<br>things you will know. The more
+      that<br>you learn, the more places you'll go."<br><br>- Dr.
+      Seuss
+    </p>
+    <br><br>
+    <p>
+      "For the best return on your<br>money, pour your purse<br>into
+      your head."<br><br>- Benjamin Franklin
+    </p>
+  </div>
+</main>
+
+<!-- CATEGORY SECTION -->
+<section class="index-category">
+  <p>Categories</p>
+  <a
+    routerLink="{{ROUTE_LINKS.WORK}}"
+    routerLinkActive="active"
+    fragment="game-dev"
+    class="index-category-box"
+  >
+    <div class="dark-overlay"></div>
+    <h3>Game Development</h3>
+  </a>
+  <a
+    routerLink="{{ROUTE_LINKS.WORK}}"
+    routerLinkActive="active"
+    fragment="web-dev"
+    class="index-category-box"
+  >
+    <div class="dark-overlay"></div>
+    <h3>Web Development</h3>
+  </a>
+  <a
+    routerLink="{{ROUTE_LINKS.WORK}}"
+    routerLinkActive="active"
+    fragment="writing"
+     class="index-category-box"
+  >
+    <div class="dark-overlay"></div>
+    <h3>Writing</h3>
+  </a>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="index-about">
+  <div class="wrapper-main index-about-flex">
+    <div class="index-about-img">
+      <img ngSrc="../../../assets/Images/About/faariz-about-1.png" alt="Faariz Sheikh portrait" class="no-image"
+           height="225" width="200" priority>
+    </div>
+    <div class="index-about-txt">
+      <h2>A bit about me.</h2>
+      <p>
+        I am Faariz -- a developer, game creator, and writer with a passion
+        for building, spreading facts, and storytelling. Outside of coding and writing, I
+        enjoy exploring new ideas, learning different skills, and sharing
+        creativity with others.
+        <br><br>
+        I believe in creating things that are both meaningful and enjoyable,
+        whether it's a website, a game world, or a story. Want to know more
+        about my journey?
+      </p>
+      <a routerLink="{{ROUTE_LINKS.ABOUT}}" routerLinkActive="active" title="About page.">GET TO KNOW ME</a>
+    </div>
+    <div class="index-about-skill">
+      <p>Angular & TypeScript</p>
+      <div class="index-about-skill-bar">
+        <div class="index-about-skill-bar-fill angts"></div>
+      </div>
+      <p>C# (C-Sharp)</p>
+      <div class="index-about-skill-bar">
+        <div class="index-about-skill-bar-fill c-sharp"></div>
+      </div>
+      <p>CSS, LESS, & SCSS</p>
+      <div class="index-about-skill-bar">
+        <div class="index-about-skill-bar-fill css-less-scss"></div>
+      </div>
+      <p>HTML</p>
+      <div class="index-about-skill-bar">
+        <div class="index-about-skill-bar-fill html"></div>
+      </div>
+      <p>Java</p>
+      <div class="index-about-skill-bar">
+        <div class="index-about-skill-bar-fill java"></div>
+      </div>
+      <p>JavaScript</p>
+      <div class="index-about-skill-bar">
+        <div class="index-about-skill-bar-fill js"></div>
+      </div>
+      <p>JSON</p>
+      <div class="index-about-skill-bar">
+        <div class="index-about-skill-bar-fill json"></div>
+      </div>
+      <p>PHP & SQL</p>
+      <div class="index-about-skill-bar">
+        <div class="index-about-skill-bar-fill phpsql"></div>
+      </div>
+      <p>Python</p>
+      <div class="index-about-skill-bar">
+        <div class="index-about-skill-bar-fill py"></div>
+      </div>
+      <p>Unity Essentials</p>
+      <div class="index-about-skill-bar">
+        <div class="index-about-skill-bar-fill unity-essence"></div>
+      </div>
+      <p>Writing</p>
+      <div class="index-about-skill-bar">
+        <div class="index-about-skill-bar-fill write"></div>
+      </div>
+      <p>XML</p>
+      <div class="index-about-skill-bar">
+        <div class="index-about-skill-bar-fill xml"></div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,1 +1,168 @@
 /* -- header.scss: -- */
+
+@use '../../../styles/variables.scss' as variables;
+
+/** HEADER CSS **/
+.header-main {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: var(--nav-bg-color);
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+
+  .header-main-logo {
+    width: fit-content;
+    align-items: center;
+    height: 100%;
+    padding-left: 60px;
+    display: flex;
+
+    img {
+      height: 40px;
+      width: 100px;
+      align-self: center;
+      margin-top: 8px;
+    }
+
+    .header-main-nav {
+      width: fit-content;
+      height: 100%;
+
+      ul {
+        list-style: none;
+        margin-left: 30px;
+
+        li {
+          display: inline;
+          float: left;
+
+          a {
+            padding: 0 10px;
+            font-family: Roboto, cursive;
+            font-size: 1.6rem;
+            line-height: 60px;
+            color: #000;
+            display: block;
+            height: 100%;
+            transition: all ease-in-out 200ms;
+
+            &:hover {
+              color: #c13854;
+            }
+          }
+        }
+      }
+    } // header-main-nav ends here.
+  } // header-main-logo ends here.
+
+  .header-main-sm {
+    width: fit-content;
+    height: 100%;
+    padding-right: 60px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    .header-main-sm-github,
+    .header-main-sm-ig,
+    .header-main-sm-kdp,
+    .header-main-sm-linkedin,
+    .header-main-sm-medium,
+    .header-main-sm-twitterx,
+    .header-main-sm-unity-engine {
+      width: 35px;
+      height: 35px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: background 700ms ease-in-out;
+    }
+
+    .header-main-sm-github {
+      background-image: url(../../../assets/Images/Header/SocialMedia/github.png);
+
+      &:hover {
+        background-image: url(../../../assets/Images/Header/SocialMedia/github-color.png);
+      }
+    }
+
+    .header-main-sm-ig {
+      background-image: url(../../../assets/Images/Header/SocialMedia/instagram.png);
+
+      &:hover {
+        background-image: url(../../../assets/Images/Header/SocialMedia/instagram-color.png);
+      }
+    }
+
+    .header-main-sm-linkedin {
+      background-image: url(../../../assets/Images/Header/SocialMedia/linkedin.png);
+
+      &:hover {
+        background-image: url(../../../assets/Images/Header/SocialMedia/linkedin-color.png);
+      }
+    }
+
+    .header-main-sm-medium {
+      background-image: url(../../../assets/Images/Header/SocialMedia/medium.png);
+
+      &:hover {
+        background-image: url(../../../assets/Images/Header/SocialMedia/medium-color.png);
+      }
+    }
+
+    .header-main-sm-twitterx {
+      background-image: url(../../../assets/Images/Header/SocialMedia/x.png);
+
+      &:hover {
+        background-image: url(../../../assets/Images/Header/SocialMedia/x-color.png);
+      }
+    }
+
+    .header-main-sm-unity-engine {
+      background-image: url(../../../assets/Images/Header/SocialMedia/unity-engine.png);
+
+      &:hover {
+        background-image: url(../../../assets/Images/Header/SocialMedia/unity-engine-color.png);
+      }
+    }
+
+    .header-main-sm-kdp {
+      background-image: url(../../../assets/Images/Header/SocialMedia/book-flip.png);
+      background-position: center;
+      position: relative;
+
+      video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.6s ease-in-out;
+        pointer-events: none;
+      }
+    }
+  } // header-main-sm ends here.
+} // header-main ends here.
+
+@media only screen and (max-width: variables.$mobile-breakpoint) {
+  .header-main-nav {
+    display: none;
+  }
+
+  .header-main-sm {
+    padding-right: 20px;
+
+    .header-main-sm-github,
+    .header-main-sm-ig,
+    .header-main-sm-kdp,
+    .header-main-sm-linkedin,
+    .header-main-sm-medium,
+    .header-main-sm-twitterx,
+    .header-main-sm-unity-engine {
+      display: none;
+    }
+  } // media only screen max-width 600px's header-main-sm ends here.
+} // media only screen max-width 600px ends here.

@@ -1,1 +1,329 @@
 /* -- home.scss: -- */
+
+@use '../../../styles/variables.scss' as variables;
+
+main {
+  background-color: #1a253a;
+  background-image: url(../../../assets/Images/Background/faariz-bg.png),
+  url(../../../assets/Images/Background/brick.png);
+  background-position: bottom left calc(50% + 80px), center;
+  background-repeat: no-repeat;
+  background-size: 70vh, cover;
+  min-height: calc(100vh - 60px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 220px;
+  justify-content: center;
+  z-index: 100;
+
+  /* HERO SECTION */
+  .main-intro {
+    padding-bottom: 8vh;
+
+    h1 {
+      font-size: 9.6rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+  }
+
+  .main-quotes {
+    padding-bottom: 8vh;
+
+    p {
+      margin: 40px 0;
+      padding-left: 20px;
+      border-left: 4px solid var(--site-color-01);
+
+      &:nth-of-type(2) {
+        margin-left: 100px;
+      }
+    }
+  }
+
+  p {
+    font-size: 1.8rem;
+    line-height: 1.75;
+    max-width: 500px;
+  }
+
+  a {
+    background-color: var(--site-color-01);
+    font-size: 1.8rem;
+    line-height: 36px;
+    margin-top: 30px;
+    padding: 0 20px;
+    height: 36px;
+    width: fit-content;
+    display: block;
+    transition: all ease-in-out 200ms;
+
+    &:hover {
+      background-color: var(--site-color-01-hover);
+    }
+  }
+} // Main ends here.
+
+/* CATEGORY SECTION */
+.index-category {
+  background-color: #fff;
+  padding: 60px 0;
+  width: 100%;
+  display: flex;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  p {
+    color: #111;
+    font-size: 2.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+    flex-basis: 100%;
+  }
+
+  .index-category-box {
+    background-color: #111;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20rem;
+    width: 20rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover .dark-overlay {
+      opacity: 0;
+    }
+
+    &:nth-child(2) {
+      background-image: url(../../../assets/Images/Categories/gaming.png);
+    }
+
+    &:nth-child(3) {
+      background-image: url(../../../assets/Images/Categories/web-development.png);
+    }
+
+    &:nth-child(4) {
+      background-image: url(../../../assets/Images/Categories/writing.png);
+    }
+
+    .dark-overlay {
+      background-color: #1a253a;
+      position: absolute;
+      inset: 0 0 0 0;
+      opacity: 0.5;
+      transition: all ease-in-out 200ms;
+    }
+
+    h3 {
+      font-size: 2.2rem;
+      text-align: center;
+      text-shadow: -2px 2px 4px #000;
+      line-height: 1.5;
+      z-index: 100;
+    }
+  }
+} // index-category ends here.
+
+/* ABOUT SECTION */
+.index-about {
+  background-color: #1a253a;
+  width: 100%;
+  padding: 60px 0;
+
+  .index-about-flex {
+    display: flex;
+    align-items: center;
+    column-gap: 60px;
+    justify-content: center;
+
+    .index-about-img {
+      width: 250px;
+
+      img {
+        height: 225px;
+        width: 200px;
+        border-radius: 125px;
+      }
+    }
+
+    .index-about-txt {
+      flex-basis: 455px;
+
+      p {
+        padding: 20px 0;
+      }
+
+      a {
+        background-color: var(--site-color-01);
+        font-size: 1.8rem;
+        line-height: 36px;
+        padding: 0 20px;
+        height: 36px;
+        width: fit-content;
+        display: block;
+        transition: all ease-in-out 200ms;
+
+        &:hover {
+          background-color: var(--site-color-01-hover);
+        }
+      }
+    } // index-about-text ends here.
+
+    .index-about-skill {
+      flex-basis: 350px;
+
+      .index-about-skill-bar {
+        height: 20px;
+        width: 100%;
+        border: 4px solid #0b0f16;
+
+        .index-about-skill-bar-fill {
+          background-color: var(--site-color-01);
+          height: 100%;
+
+          &.angts {
+            width: 50%;
+          }
+
+          &.c-sharp {
+            width: 45%;
+          }
+
+          &.css-less-scss {
+            width: 80%;
+          }
+
+          &.html {
+            width: 80%;
+          }
+
+          &.java {
+            width: 50%;
+          }
+
+          &.js {
+            width: 75%;
+          }
+
+          &.json {
+            width: 60%;
+          }
+
+          &.phpsql {
+            width: 65%;
+          }
+
+          &.py {
+            width: 90%;
+          }
+
+          &.unity-essence {
+            width: 75%;
+          }
+
+          &.write {
+            width: 88%;
+          }
+
+          &.xml {
+            width: 80%;
+          }
+        } // index-about-skill-bar-fill ends here.
+      } // index-about-skill-bar ends here.
+    } // index-about-skill ends here.
+  } // index-about-flex ends here.
+} // index-about ends here.
+
+/** MOBILE VERSION **/
+@media only screen and (max-width: variables.$mobile-breakpoint) {
+  main {
+    background-image: url(../../../assets/Images/Background/faariz-bg-1.png),
+    url(../../../assets/Images/Background/brick.png);
+    background-position: bottom left calc(50% - 0px), center;
+    background-size: 90vh, cover;
+    align-items: flex-end;
+  }
+
+  /* HERO */
+  main .main-intro {
+    padding-bottom: 8vh;
+  }
+
+  main .main-intro h1 {
+    font-size: 5rem;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  main p {
+    text-align: center;
+    line-height: 1.75;
+    padding: 0 20px;
+  }
+
+  main a {
+    margin: 30px auto;
+  }
+
+  main .main-quotes {
+    display: none;
+  }
+
+  /* CATEGORY */
+  .index-category {
+    padding: 40px 0 20px;
+    row-gap: 10px;
+  }
+
+  .index-category p {
+    padding-bottom: 20px;
+  }
+
+  .index-category-box {
+    height: 160px;
+    width: calc(100% - 20px);
+  }
+
+  .index-category-box:nth-child(2) {
+    background-image: url(../../../assets/Images/Categories/gaming-small.png);
+  }
+
+  .index-category-box:nth-child(3) {
+    background-image: url(../../../assets/Images/Categories/web-development-small.png);
+  }
+
+  .index-category-box:nth-child(4) {
+    background-image: url(../../../assets/Images/Categories/writing-small.png);
+  }
+
+  /* ABOUT */
+  .index-about-flex {
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+
+  .index-about-img {
+    transform: translateX(20px);
+  }
+
+  .index-about-txt {
+    flex-basis: 100%;
+  }
+
+  .index-about-txt h2 {
+    text-align: center;
+  }
+
+  .index-about-txt p {
+    text-align: center;
+  }
+
+  .index-about-txt a {
+    margin: 0 auto 10px;
+  }
+}

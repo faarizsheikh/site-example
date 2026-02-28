@@ -1,1 +1,16 @@
 /* -- variables.scss: -- */
+
+:root {
+  --site-color-01: #c13584;
+  --site-color-01-hover: #9e2f60;
+  --body-bg-color: #1e1e1e;
+  --nav-bg-color: white;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+$mobile-breakpoint: 600px;
+$tablet-breakpoint: 768px;
+$laptop-breakpoint: 1024px;

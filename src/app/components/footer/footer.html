@@ -1,1 +1,126 @@
 <!-- footer.html: -->
+
+<footer class="footer-main">
+  <div class="wrapper-main footer-main-flex">
+    <p id="version-number">V{{versionNum}}</p>
+
+    <a
+      routerLink="{{ROUTE_LINKS.CONTACT}}"
+      routerLinkActive="active"
+      #aboutActive="routerLinkActive"
+      [attr.title]="contactActive.isActive ? 'You are here.' : 'Contact page.'"
+      class="footer-getintouch"
+    >GET IN TOUCH WITH ME</a>
+
+    <div class="footer-sitemap">
+      <ul>
+        <!-- Home: -->
+        <li>
+          <a
+            routerLink="{{ROUTE_LINKS.HOME}}"
+            routerLinkActive="active"
+            #homeActive="routerLinkActive"
+            [attr.title]="homeActive.isActive ? 'You are here.' : 'Return to the main page.'"
+          >
+            HOME
+          </a>
+        </li>
+
+        <!-- About: -->
+        <li>
+          <a
+            routerLink="{{ROUTE_LINKS.ABOUT}}"
+            routerLinkActive="active"
+            #aboutActive="routerLinkActive"
+            [attr.title]="aboutActive.isActive ? 'You are here.' : 'Get to know me.'"
+          >
+            ABOUT
+          </a>
+        </li>
+
+        <!-- Contact: -->
+        <li>
+          <a
+            routerLink="{{ROUTE_LINKS.CONTACT}}"
+            routerLinkActive="active"
+            #contactActive="routerLinkActive"
+            [attr.title]="contactActive.isActive ? 'You are here.' : 'Question, Feedback, Collaboration?'"
+          >
+            CONTACT
+          </a>
+        </li>
+
+        <!-- Work: -->
+        <li>
+          <a
+            routerLink="{{ROUTE_LINKS.WORK}}"
+            routerLinkActive="active"
+            #workActive="routerLinkActive"
+            [attr.title]="workActive.isActive ? 'You are here.' : 'Know about my work.'"
+          >
+            WORK
+          </a>
+        </li>
+
+        <!-- Resume: -->
+        <li>
+          <a
+            href="../../../assets/PDFs/faariz-resume.pdf"
+            target="_blank"
+            rel="noopener"
+            title="See my Resume."
+          >
+            RESUME
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a
+          routerLink="{{ROUTE_LINKS.WORK}}"
+          routerLinkActive="active"
+          fragment="game-dev"
+        >GAME DEVELOPMENT
+        </a>
+        </li>
+        <li>
+          <a
+            routerLink="{{ROUTE_LINKS.WORK}}"
+            routerLinkActive="active"
+            fragment="web-dev"
+          >WEB DEVELOPMENT
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="{{ROUTE_LINKS.WORK}}"
+            routerLinkActive="active"
+            fragment="writing"
+          >WRITING
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <p>
+            If you want to collaborate or hire me for a job, then don't
+            hesitate to send me an e-mail, or call me to arrange a small
+            meeting!
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <p>GET IN TOUCH</p>
+        </li>
+        <li>
+          <p>+1 (226) 787-3529</p>
+        </li>
+        <li>
+          <p>faarizyt&#64;gmail.com</p>
+        </li>
+      </ul>
+    </div>
+      <p id="copyright-notice">&#64; {{currentYear}} Faariz Haider Sheikh</p>
+  </div>
+</footer>

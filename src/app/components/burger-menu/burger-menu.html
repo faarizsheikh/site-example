@@ -1,1 +1,87 @@
 <!-- burger-menu.html: -->
+
+<!-- BURGER MENU BUTTON -->
+<button
+  type="button"
+  class="burger-menu-btn"
+  [class.open]="isOpen"
+  [attr.aria-expanded]="isOpen"
+  [attr.aria-label]="isOpen ? 'Close menu' : 'Open menu'"
+  aria-controls="burger-menu"
+  (click)="toggleMenu()">
+</button>
+
+
+<!-- BURGER MENU -->
+<nav   id="burger-menu"
+       class="burger-menu"
+       [class.open]="isOpen"
+       [hidden]="!isOpen">
+  <ul>
+    <li><a routerLink="{{ROUTE_LINKS.HOME}}" (click)="closeMenu()">HOME</a></li>
+    <li><a routerLink="{{ROUTE_LINKS.ABOUT}}" (click)="closeMenu()">ABOUT</a></li>
+    <li><a routerLink="{{ROUTE_LINKS.CONTACT}}" (click)="closeMenu()">CONTACT</a></li>
+    <li><a routerLink="{{ROUTE_LINKS.WORK}}" (click)="closeMenu()">WORK</a></li>
+    <li>
+      <a
+        href="../../../assets/PDFs/faariz-resume.pdf"
+        target="_blank"
+        rel="noopener"
+        title="See my Resume."
+      >RESUME</a>
+    </li>
+
+    <li class="burger-social-version">
+      <div class="burger-social-icons">
+        <a
+          href="https://www.github.com"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub">
+          <div class="header-main-bm-sm-github"></div>
+        </a>
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram">
+          <div class="header-main-bm-sm-ig"></div>
+        </a>
+        <a
+          href="https://kdp.amazon.com"
+          target="_blank"
+          rel="noopener"
+          aria-label="Amazon KDP">
+          <div class="header-main-bm-sm-kdp"></div>
+        </a>
+        <a
+          href="https://www.linkedin.com"
+          target="_blank"
+          rel="noopener"
+          aria-label="Linkedin">
+          <div class="header-main-bm-sm-linkedin"></div>
+        </a>
+        <a href="https://www.medium.com"
+           target="_blank"
+           rel="noopener"
+           aria-label="Medium">
+          <div class="header-main-bm-sm-medium"></div>
+        </a>
+        <a href="https://www.twitter.com"
+           target="_blank"
+           rel="noopener"
+           aria-label="X">
+          <div class="header-main-bm-sm-twitterx"></div>
+        </a>
+        <a href="https://www.unity.com"
+           target="_blank"
+           rel="noopener"
+           aria-label="Unity">
+          <div class="header-main-bm-sm-unity-engine"></div>
+        </a>
+      </div>
+      <span id="version-number2">V{{versionNum}}</span><br>
+      <span id="copyright-notice2">&#64; {{currentYear}} Faariz Haider Sheikh</span>
+    </li>
+  </ul>
+</nav>

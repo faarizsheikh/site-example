@@ -1,1 +1,132 @@
 /* -- footer.scss: -- */
+
+@use '../../../styles/variables.scss' as variables;
+
+.footer-main {
+  width: 100%;
+  padding: 60px 0 75px;
+  background-color: #141414;
+
+  .footer-main-flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    #version-number, #copyright-notice {
+      display: block;
+      width: 100%;
+    }
+
+    #version-number {
+      text-align: right;
+    }
+
+    #copyright-notice {
+      text-align: center;
+    }
+
+    .footer-getintouch {
+      padding: 10px 20px;
+      margin: 0 0 60px;
+      max-height: 45px;
+      border: 2px solid #fff;
+      font-weight: 600;
+      transition: all ease-in-out 200ms;
+
+      &:hover {
+        border: 2px solid var(--site-color-01-hover);
+      }
+    } // footer-getintouch ends here.
+
+    .footer-sitemap {
+      flex-basis: 100%;
+      display: flex;
+
+      p {
+        text-transform: uppercase;
+      }
+
+      a {
+        line-height: 30px;
+        transition: all ease-in-out 200ms;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      ul {
+        &:nth-child(1),
+        &:nth-child(2) {
+          flex-basis: 180px;
+        }
+
+        &:nth-child(1) {
+          border-left: 4px solid var(--site-color-01);
+          padding-left: 20px;
+        }
+
+        &:nth-child(3) {
+          flex-basis: 340px;
+        }
+
+        &:nth-child(4) {
+          flex-grow: 1;
+
+          p {
+            text-align: right;
+          }
+        }
+      }
+    } // footer-sitemap ends here.
+  } // footer-main-flex ends here.
+} // footer-main ends here.
+
+@media only screen and (max-width: variables.$mobile-breakpoint) {
+  .footer-main {
+    width: 100%;
+    padding: 60px 0 100px;
+    background-color: #141414;
+
+    .footer-main-flex {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      #version-number, #copyright-notice {
+        display: none;
+      }
+
+      .footer-getintouch {
+        padding: 10px 15px 25px;
+      }
+
+      .footer-sitemap {
+        flex-wrap: wrap;
+
+        p {
+          padding: 0 20px;
+        }
+
+        ul {
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3) {
+            flex-basis: 100%;
+            text-align: center;
+            padding-bottom: 20px;
+          }
+
+          &:nth-child(1) {
+            border-left: none;
+            padding-left: 0;
+          }
+
+          &:nth-child(4) p {
+            text-align: center;
+          }
+        }
+      } // media only screen max-width 600px's footer-sitemap ends here.
+    } // media only screen max-width 600px's footer-main-flex ends here.
+  } // media only screen max-width 600px's footer-main ends here.
+} // media only screen max-width 600px ends here.
