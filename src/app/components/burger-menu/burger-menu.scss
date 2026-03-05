@@ -100,13 +100,13 @@
     place-self: center;
   }
 
-  .header-main-bm-sm-github,
-  .header-main-bm-sm-ig,
-  .header-main-bm-sm-kdp,
-  .header-main-bm-sm-linkedin,
-  .header-main-bm-sm-medium,
-  .header-main-bm-sm-twitterx,
-  .header-main-bm-sm-unity-engine {
+  .header-main-sm-bm-github,
+  .header-main-sm-bm-ig,
+  .header-main-sm-bm-kdp,
+  .header-main-sm-bm-linkedin,
+  .header-main-sm-bm-medium,
+  .header-main-sm-bm-twitterx,
+  .header-main-sm-bm-unity-engine {
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
@@ -115,32 +115,32 @@
   }
 
   /* --- Individual Icons --- */
-  .header-main-bm-sm-github {
+  .header-main-sm-bm-github {
     background-image: url(../../../assets/Images/Header/SocialMedia/github-color.png);
   }
 
-  .header-main-bm-sm-ig {
+  .header-main-sm-bm-ig {
     background-image: url(../../../assets/Images/Header/SocialMedia/instagram-color.png);
   }
 
-  .header-main-bm-sm-linkedin {
+  .header-main-sm-bm-linkedin {
     background-image: url(../../../assets/Images/Header/SocialMedia/linkedin-color.png);
     border-radius: 30px;
   }
 
-  .header-main-bm-sm-medium {
+  .header-main-sm-bm-medium {
     background-image: url(../../../assets/Images/Header/SocialMedia/medium-color.png);
   }
 
-  .header-main-bm-sm-twitterx {
+  .header-main-sm-bm-twitterx {
     background-image: url(../../../assets/Images/Header/SocialMedia/x-color.png);
   }
 
-  .header-main-bm-sm-unity-engine {
+  .header-main-sm-bm-unity-engine {
     background-image: url(../../../assets/Images/Header/SocialMedia/unity-engine-color.png);
   }
 
-  .header-main-bm-sm-kdp {
+  .header-main-sm-bm-kdp {
     background-image: url(../../../assets/Images/Header/SocialMedia/book-flip.png);
     border-radius: 30px;
   }

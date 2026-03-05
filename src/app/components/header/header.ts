@@ -1,72 +1,44 @@
-// header.component.ts:
+// header.ts:
 
-import {NgOptimizedImage} from '@angular/common';
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
-import {RouterLink, RouterLinkActive} from '@angular/router';
-import {ROUTE_LINKS} from '../../Shared/constants';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import {class_prefix, NavItem, ROUTE_LINKS, ROUTE_LINKS_ARRAY, SOCIAL_LINKS} from '../../Shared/constants';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    NgOptimizedImage,
-    RouterLinkActive,
-    RouterLink
-  ],
+  imports: [NgOptimizedImage, RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
+export class Header {
+  protected readonly ROUTE_LINKS = ROUTE_LINKS;
 
-export class Header implements AfterViewInit {
-  @ViewChild('kdpContainer') kdpContainer!: ElementRef<HTMLDivElement>;
+  @ViewChild('video') videoPlayer?: ElementRef<HTMLVideoElement>;
 
-  private video!: HTMLVideoElement;
-  private resetTimeout: any;
+  playVideo() {
+    const video = this.videoPlayer?.nativeElement;
 
-  ngAfterViewInit(): void {
+    if (!video) return;
 
-    const container = this.kdpContainer.nativeElement;
+    video.currentTime = 0;
 
-    this.video = document.createElement('video');
-
-    this.video.src = 'assets/Videos/book-flip.mp4';
-    this.video.loop = true;
-    this.video.muted = true;
-    this.video.playsInline = true;
-
-    this.video.style.position = 'absolute';
-    this.video.style.top = '0';
-    this.video.style.left = '0';
-    this.video.style.width = '100%';
-    this.video.style.height = '100%';
-    this.video.style.objectFit = 'cover';
-
-    this.video.style.opacity = '0';
-    this.video.style.transition = 'opacity 0.6s ease-in-out';
-    this.video.style.pointerEvents = 'none';
-    this.video.style.display = 'block';
-
-    container.style.overflow = 'hidden';
-    container.appendChild(this.video);
-
-    container.addEventListener('mouseenter', () => {
-      if (this.resetTimeout) {
-        clearTimeout(this.resetTimeout);
-        this.resetTimeout = null;
-      }
-      this.video.currentTime = 0;
-      this.video.style.opacity = '1';
-      this.video?.play();
-    });
-
-    container.addEventListener('mouseleave', () => {
-      this.resetTimeout = setTimeout(() => {
-        this.video.currentTime = 0;
-        this.video.style.opacity = '0';
-        this.video?.pause();
-      }, 600);
+    video.play().catch(() => {
+      // silent fail if autoplay blocked (should not happen with muted)
     });
   }
 
-  protected readonly ROUTE_LINKS = ROUTE_LINKS;
+  pauseVideo() {
+    const video = this.videoPlayer?.nativeElement;
+
+    if (!video) return;
+
+    video.pause();
+    video.currentTime = 0;
+  }
+
+  protected readonly ROUTE_LINKS_ARRAY: NavItem[] = ROUTE_LINKS_ARRAY;
+  protected readonly SOCIAL_LINKS = SOCIAL_LINKS;
+  protected readonly class_prefix = class_prefix;
 }

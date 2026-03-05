@@ -47,22 +47,6 @@ main {
     line-height: 1.75;
     max-width: 500px;
   }
-
-  a {
-    background-color: var(--site-color-01);
-    font-size: 1.8rem;
-    line-height: 36px;
-    margin-top: 30px;
-    padding: 0 20px;
-    height: 36px;
-    width: fit-content;
-    display: block;
-    transition: all ease-in-out 200ms;
-
-    &:hover {
-      background-color: var(--site-color-01-hover);
-    }
-  }
 } // Main ends here.
 
 /* CATEGORY SECTION */
@@ -75,9 +59,10 @@ main {
   flex-wrap: wrap;
   justify-content: center;
 
-  p {
+  h2 {
     color: #111;
     font-size: 2.2rem;
+    font-weight: normal;
     text-align: center;
     text-transform: uppercase;
     padding-bottom: 40px;
@@ -155,22 +140,12 @@ main {
       flex-basis: 455px;
 
       p {
-        padding: 20px 0;
+        padding-top: 20px;
       }
 
-      a {
-        background-color: var(--site-color-01);
-        font-size: 1.8rem;
-        line-height: 36px;
+      button {
+        margin-top: 30px;
         padding: 0 20px;
-        height: 36px;
-        width: fit-content;
-        display: block;
-        transition: all ease-in-out 200ms;
-
-        &:hover {
-          background-color: var(--site-color-01-hover);
-        }
       }
     } // index-about-text ends here.
 
@@ -185,53 +160,15 @@ main {
         .index-about-skill-bar-fill {
           background-color: var(--site-color-01);
           height: 100%;
+          position: relative;
 
-          &.angts {
-            width: 50%;
-          }
-
-          &.c-sharp {
-            width: 45%;
-          }
-
-          &.css-less-scss {
-            width: 80%;
-          }
-
-          &.html {
-            width: 80%;
-          }
-
-          &.java {
-            width: 50%;
-          }
-
-          &.js {
-            width: 75%;
-          }
-
-          &.json {
-            width: 60%;
-          }
-
-          &.phpsql {
-            width: 65%;
-          }
-
-          &.py {
-            width: 90%;
-          }
-
-          &.unity-essence {
-            width: 75%;
-          }
-
-          &.write {
-            width: 88%;
-          }
-
-          &.xml {
-            width: 80%;
+          span {
+            color: white;
+            font-size: 1.8rem;
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
           }
         } // index-about-skill-bar-fill ends here.
       } // index-about-skill-bar ends here.
@@ -266,7 +203,7 @@ main {
     padding: 0 20px;
   }
 
-  main a {
+  main button {
     margin: 30px auto;
   }
 
@@ -323,7 +260,7 @@ main {
     text-align: center;
   }
 
-  .index-about-txt a {
+  .index-about-txt button {
     margin: 0 auto 10px;
   }
 }

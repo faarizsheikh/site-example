@@ -1,13 +1,19 @@
 <!-- app.html: -->
 <div [class.menu-open]="isMenuOpen">
-  <app-header></app-header>
+
 
   <app-burger-menu
     [isOpen]="isMenuOpen"
     (click)="toggleMenu()"
   ></app-burger-menu>
 
-  <router-outlet></router-outlet>
-
-  <app-footer></app-footer>
+  <div
+    class="page-content"
+    [attr.inert]="isMenuOpen ? '' : null"
+    [attr.aria-hidden]="isMenuOpen ? 'true' : null"
+  >
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </div>
 </div>

@@ -1,14 +1,20 @@
 // burger-menu.component.ts:
 
 import {Component, Input} from '@angular/core';
-import {ROUTE_LINKS, currentYear, versionNum} from '../../Shared/constants';
-import {RouterLink} from '@angular/router';
+import {currentYear, versionNum, class_prefix, SOCIAL_LINKS, ROUTE_LINKS_ARRAY} from '../../Shared/constants';
+import {RouterLink, RouterLinkActive} from '@angular/router';
+
+type NavItem = {
+  label: string;
+  path: string;
+};
 
 @Component({
   selector: 'app-burger-menu',
   standalone: true,
   imports: [
-    RouterLink
+    RouterLink,
+    RouterLinkActive,
   ],
   templateUrl: './burger-menu.html',
   styleUrl: './burger-menu.scss',
@@ -17,7 +23,9 @@ import {RouterLink} from '@angular/router';
 export class BurgerMenu {
   @Input() isOpen = false;
 
-  protected readonly versionNum = versionNum;
+  protected readonly class_prefix = class_prefix;
   protected readonly currentYear = currentYear;
-  protected readonly ROUTE_LINKS = ROUTE_LINKS;
+  protected readonly versionNum = versionNum;
+  protected readonly SOCIAL_LINKS = SOCIAL_LINKS;
+  protected readonly ROUTE_LINKS_ARRAY: NavItem[] = ROUTE_LINKS_ARRAY;
 }

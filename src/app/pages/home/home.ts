@@ -1,9 +1,9 @@
 //home.ts:
 
-import {AfterViewInit, Component, ElementRef, HostListener} from '@angular/core';
-import {RouterLink, RouterLinkActive} from '@angular/router';
+import {Component} from '@angular/core';
+import {RouterLink} from '@angular/router';
 import {NgOptimizedImage} from '@angular/common';
-import {ROUTE_LINKS} from '../../Shared/constants';
+import {ROUTE_LINKS, WORKPAGE_LINKS} from '../../Shared/constants';
 
 @Component({
   selector: 'app-home',
@@ -12,56 +12,60 @@ import {ROUTE_LINKS} from '../../Shared/constants';
   styleUrl: './home.scss',
   imports: [
     RouterLink,
-    RouterLinkActive,
     NgOptimizedImage
   ]
 })
 
-export class Home implements AfterViewInit {
+export class Home {
 
-  private percentageSpans: HTMLElement[] = [];
+  // quoteList = [
+  //   {
+  //     quote: "The more that you read, the more<br>things you will know. " +
+  //       "The more that<br>you learn, the more places you'll go.",
+  //     quotee: "Dr. Seuss"
+  //   },
+  //   {
+  //     quote: "For the best return on your<br>money, pour your purse<br>into your head.",
+  //     quotee: "Benjamin Franklin"}
+  // ];
 
-  constructor(private el: ElementRef) {}
+  quoteList = [
+    {
+      lines: [
+        "The more that you read, the more",
+        "things you will know. The more that",
+        "you learn, the more places you'll go."
+      ],
+      quotee: "Dr. Seuss"
+    },
+    {
+      lines: [
+        "For the best return on your",
+        "money, pour your purse",
+        "into your head."
+      ],
+      quotee: "Benjamin Franklin"
+    }
+  ];
 
-  ngAfterViewInit(): void {
-    const bars: NodeListOf<HTMLElement> =
-      this.el.nativeElement.querySelectorAll('.index-about-skill-bar-fill');
-
-    bars.forEach((bar) => {
-      let percentage = bar.style.width;
-
-      if (!percentage) {
-        const computedWidth = getComputedStyle(bar).width;
-        const parentWidth = bar.parentElement!.clientWidth;
-        percentage =
-          ((parseFloat(computedWidth) / parentWidth) * 100).toFixed(0) + '%';
-      }
-
-      const text = document.createElement('span');
-      text.textContent = percentage;
-      text.style.color = '#fff';
-      text.style.fontSize = '1.8rem';
-      text.style.position = 'relative';
-      text.style.bottom = '5px';
-
-      bar.appendChild(text);
-      this.percentageSpans.push(text);
-    });
-
-    this.updateTextPosition(); // set initial position
-  }
-  @HostListener('window:resize')
-  onResize() {
-    this.updateTextPosition();
-  }
-
-  private updateTextPosition() {
-    const isMobile = window.innerWidth < 600;
-
-    this.percentageSpans.forEach(text => {
-      text.style.left = isMobile ? '120px' : '350px';
-    });
-  }
+  skills = [
+    { name: 'Angular & TypeScript', percent: 50 },
+    { name: 'C# (C-Sharp)', percent: 45 },
+    { name: 'CSS, LESS, & SCSS', percent: 80 },
+    { name: 'HTML', percent: 80 },
+    { name: 'Java', percent: 50 },
+    { name: 'JavaScript', percent: 75 },
+    { name: 'JFX', percent: 50 },
+    { name: 'JSON', percent: 60 },
+    { name: 'PHP & SQL', percent: 65 },
+    { name: 'Python', percent: 90 },
+    { name: 'Unity Essentials', percent: 75 },
+    { name: 'Writing', percent: 88 },
+    { name: 'XML', percent: 80 }
+  ];
 
   protected readonly ROUTE_LINKS = ROUTE_LINKS;
+  protected readonly WORKPAGE_LINKS = WORKPAGE_LINKS;
 }
+
+// - − – —

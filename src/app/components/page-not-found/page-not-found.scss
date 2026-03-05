@@ -1,3 +1,12 @@
 /* -- page-not-found.scss: -- */
 
 @use '../../../styles/variables.scss' as variables;
+
+main {
+  text-align: center;
+
+  button {
+    display: flex;
+    justify-self: center;
+  }
+}

@@ -4,63 +4,30 @@
   <div class="wrapper-main footer-main-flex">
     <p id="version-number">V{{versionNum}}</p>
 
-    <a
-      routerLink="{{ROUTE_LINKS.CONTACT}}"
+    <button
+      [routerLink]="ROUTE_LINKS.CONTACT"
       routerLinkActive="active"
-      #aboutActive="routerLinkActive"
-      [attr.title]="contactActive.isActive ? 'You are here.' : 'Contact page.'"
+      #contactActive="routerLinkActive"
+      [attr.aria-current]="contactActive.isActive ? 'page' : null"
       class="footer-getintouch"
-    >GET IN TOUCH WITH ME</a>
+      type="button">
+      GET IN TOUCH WITH ME
+    </button>
 
-    <div class="footer-sitemap">
+    <nav aria-label="Footer navigation" class="footer-sitemap">
       <ul>
-        <!-- Home: -->
-        <li>
-          <a
-            routerLink="{{ROUTE_LINKS.HOME}}"
-            routerLinkActive="active"
-            #homeActive="routerLinkActive"
-            [attr.title]="homeActive.isActive ? 'You are here.' : 'Return to the main page.'"
-          >
-            HOME
-          </a>
-        </li>
-
-        <!-- About: -->
-        <li>
-          <a
-            routerLink="{{ROUTE_LINKS.ABOUT}}"
-            routerLinkActive="active"
-            #aboutActive="routerLinkActive"
-            [attr.title]="aboutActive.isActive ? 'You are here.' : 'Get to know me.'"
-          >
-            ABOUT
-          </a>
-        </li>
-
-        <!-- Contact: -->
-        <li>
-          <a
-            routerLink="{{ROUTE_LINKS.CONTACT}}"
-            routerLinkActive="active"
-            #contactActive="routerLinkActive"
-            [attr.title]="contactActive.isActive ? 'You are here.' : 'Question, Feedback, Collaboration?'"
-          >
-            CONTACT
-          </a>
-        </li>
-
-        <!-- Work: -->
-        <li>
-          <a
-            routerLink="{{ROUTE_LINKS.WORK}}"
-            routerLinkActive="active"
-            #workActive="routerLinkActive"
-            [attr.title]="workActive.isActive ? 'You are here.' : 'Know about my work.'"
-          >
-            WORK
-          </a>
-        </li>
+        @for (link of ROUTE_LINKS_ARRAY; track link.path) {
+          <li>
+            <a
+              [routerLink]="link.path"
+              routerLinkActive="active"
+              #rla="routerLinkActive"
+              [attr.aria-current]="rla.isActive ? 'page' : null"
+            >
+              {{ link.label }}
+            </a>
+          </li>
+        }
 
         <!-- Resume: -->
         <li>
@@ -68,38 +35,26 @@
             href="../../../assets/PDFs/faariz-resume.pdf"
             target="_blank"
             rel="noopener"
-            title="See my Resume."
+            aria-label="Resume, opens in new tab"
           >
             RESUME
           </a>
         </li>
       </ul>
+
       <ul>
-        <li>
+        @for (workPage_link of WORKPAGE_LINKS; track workPage_link;) {
+          <li>
           <a
-          routerLink="{{ROUTE_LINKS.WORK}}"
-          routerLinkActive="active"
-          fragment="game-dev"
-        >GAME DEVELOPMENT
-        </a>
-        </li>
-        <li>
-          <a
-            routerLink="{{ROUTE_LINKS.WORK}}"
-            routerLinkActive="active"
-            fragment="web-dev"
-          >WEB DEVELOPMENT
+            [routerLink]="ROUTE_LINKS.WORK"
+            [fragment]="workPage_link.fragment"
+          >
+            {{workPage_link.text}}
           </a>
-        </li>
-        <li>
-          <a
-            routerLink="{{ROUTE_LINKS.WORK}}"
-            routerLinkActive="active"
-            fragment="writing"
-          >WRITING
-          </a>
-        </li>
+          </li>
+        }
       </ul>
+
       <ul>
         <li>
           <p>
@@ -109,18 +64,27 @@
           </p>
         </li>
       </ul>
+
       <ul>
         <li>
           <p>GET IN TOUCH</p>
         </li>
-        <li>
-          <p>+1 (226) 787-3529</p>
-        </li>
-        <li>
-          <p>faarizyt&#64;gmail.com</p>
-        </li>
+
+        @for (contact of CONTACT_INFO; track contact;) {
+          <li>
+            <p>
+              <a
+                [attr.href]=
+                  "contact.type === 'phone' ? 'tel:' + contact.value : 'mailto:' + contact.value"
+                [class]="contact.type + '_info'"
+              >
+                {{contact.display}}
+              </a>
+            </p>
+          </li>
+        }
       </ul>
-    </div>
-      <p id="copyright-notice">&#64; {{currentYear}} Faariz Haider Sheikh</p>
+    </nav>
+      <p id="copyright-notice">© {{currentYear}} Faariz Haider Sheikh</p>
   </div>
 </footer>

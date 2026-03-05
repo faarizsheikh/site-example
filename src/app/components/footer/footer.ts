@@ -1,7 +1,15 @@
 // footer.component.ts:
 
 import { Component } from '@angular/core';
-import {currentYear, ROUTE_LINKS, versionNum} from '../../Shared/constants';
+import {
+  CONTACT_INFO,
+  currentYear,
+  NavItem,
+  ROUTE_LINKS,
+  ROUTE_LINKS_ARRAY,
+  versionNum,
+  WORKPAGE_LINKS
+} from '../../Shared/constants';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
@@ -16,7 +24,11 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
 })
 
 export class Footer {
+
   protected readonly currentYear = currentYear;
   protected readonly versionNum = versionNum;
+  protected readonly CONTACT_INFO = CONTACT_INFO;
   protected readonly ROUTE_LINKS = ROUTE_LINKS;
+  protected readonly WORKPAGE_LINKS = WORKPAGE_LINKS;
+  protected readonly ROUTE_LINKS_ARRAY: NavItem[] = ROUTE_LINKS_ARRAY;
 }

@@ -1,3 +1,75 @@
 /* -- work.scss: -- */
 
 @use '../../../styles/variables.scss' as variables;
+
+main {
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  h1 {
+    font-weight: bold;
+    margin-bottom: 45px;
+  }
+
+  h2 {
+    margin-bottom: 25px;
+
+    &:target {
+      animation: highlight 2s ease forwards;
+    }
+
+    &:not(:nth-of-type(1)) {
+      margin-top: 25px;
+    }
+  }
+
+  h3 {
+    margin-bottom: 15px;
+
+    a {
+      color: lightblue;
+      text-transform: lowercase;
+    }
+  }
+
+  div {
+    :not(:last-of-type)>p:last-of-type {
+      margin-bottom: 65px;
+    }
+
+    p:not(:nth-of-type(3)) {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+@keyframes highlight {
+  0% {
+    background-color: #fffa8b;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* RESPONSIVE DESIGN */
+@media only screen and (max-width: variables.$mobile-breakpoint) {
+  main {
+    margin-inline: 45px;
+
+    h2>span,
+    h3>sup {
+      display: block;
+      width: 100%;
+    }
+
+    h3>sup {
+      margin-top: 15px;
+    }
+  }
+}

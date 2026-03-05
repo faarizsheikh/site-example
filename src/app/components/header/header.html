@@ -4,10 +4,10 @@
 
   <div class="header-main-logo">
     <!-- LOGO: -->
-    <a routerLink="{{ROUTE_LINKS.HOME}}" routerLinkActive="active">
+    <a [routerLink]="ROUTE_LINKS.HOME" routerLinkActive="active" aria-label="Home">
       <img
         ngSrc="../../../assets/Images/Header/faariz-logo-1.png"
-        alt="Faariz logo"
+        alt="Faariz Haider Sheikh logo"
         height="40"
         width="100"
         priority
@@ -15,43 +15,22 @@
     </a>
 
     <!-- NAVIGATION: -->
-    <nav class="header-main-nav">
+    <nav class="header-main-nav" aria-label="Primary navigation">
       <ul>
-        <!-- About: -->
-        <li>
-          <a
-            routerLink="{{ROUTE_LINKS.ABOUT}}"
-            routerLinkActive="active"
-            #aboutActive="routerLinkActive"
-            [attr.title]="aboutActive.isActive ? 'You are here.' : 'Get to know me.'"
-          >
-            ABOUT
-          </a>
-        </li>
 
-        <!-- Contact: -->
-        <li>
-          <a
-            routerLink="{{ROUTE_LINKS.CONTACT}}"
-            routerLinkActive="active"
-            #contactActive="routerLinkActive"
-            [attr.title]="contactActive.isActive ? 'You are here.' : 'Question, Feedback, Collaboration?'"
-          >
-            CONTACT
-          </a>
-        </li>
-
-        <!-- Work: -->
-        <li>
-          <a
-            routerLink="{{ROUTE_LINKS.WORK}}"
-            routerLinkActive="active"
-            #workActive="routerLinkActive"
-            [attr.title]="workActive.isActive ? 'You are here.' : 'Know about my work.'"
-          >
-            WORK
-          </a>
-        </li>
+        @for (link of ROUTE_LINKS_ARRAY; track link.path) {
+          @if (link.label != "HOME") {
+            <li>
+              <a
+                [routerLink]="link.path"
+                routerLinkActive="active"
+                #rla="routerLinkActive"
+                [attr.aria-current]="rla.isActive ? 'page' : null"
+              >
+                {{ link.label }}
+              </a>
+            </li>}
+        }
 
         <!-- Resume: -->
         <li>
@@ -59,7 +38,7 @@
             href="../../../assets/PDFs/faariz-resume.pdf"
             target="_blank"
             rel="noopener"
-            title="See my Resume."
+            aria-label="Resume, opens in new tab"
           >
             RESUME
           </a>
@@ -70,32 +49,40 @@
 
   <!-- SOCIAL MEDIA: -->
   <div class="header-main-sm">
-    <a href="https://www.github.com" target="_blank" rel="noopener" title="Follow me on GitHub.">
-      <div class="sm header-main-sm-github"></div>
-    </a>
 
-    <a href="https://www.instagram.com" target="_blank" rel="noopener" title="Follow me on my Instagram.">
-      <div class="sm header-main-sm-ig"></div>
-    </a>
+    @for (SOCIAL_LINK of SOCIAL_LINKS; track SOCIAL_LINK) {
 
-    <a href="https://kdp.amazon.com" target="_blank" rel="noopener" title="Follow me on Amazon KDP.">
-      <div class="sm header-main-sm-kdp" #kdpContainer></div>
-    </a>
+      <a
+        [href]="SOCIAL_LINK.href"
+        target="_blank"
+        rel="noopener"
+        [attr.aria-label]="SOCIAL_LINK.aria_label + ', opens in new tab'"
+      >
 
-    <a href="https://www.linkedin.com" target="_blank" rel="noopener" title="Follow me on Linkedin.">
-      <div class="sm header-main-sm-linkedin"></div>
-    </a>
-
-    <a href="https://www.medium.com" target="_blank" rel="noopener" title="Follow me on Medium.">
-      <div class="sm header-main-sm-medium"></div>
-    </a>
-
-    <a href="https://www.twitter.com" target="_blank" rel="noopener" title="Follow me on X (Formerly Twitter).">
-      <div class="sm header-main-sm-twitterx"></div>
-    </a>
-
-    <a href="https://www.unity.com" target="_blank" rel="noopener" title="Follow me on Unity.">
-      <div class="sm header-main-sm-unity-engine"></div>
-    </a>
+      @if (SOCIAL_LINK.class_suffix === 'kdp') {
+        <div
+          class="sm header-main-sm-kdp"
+          (mouseenter)="playVideo()"
+          (mouseleave)="pauseVideo()"
+          aria-hidden="true"
+        >
+          <video
+            #video
+            src="assets/Videos/book-flip.mp4"
+            [loop]="true"
+            [muted]="true"
+            playsinline
+            preload="auto"
+            aria-hidden="true"
+          ></video>
+        </div>
+      } @else {
+        <div
+          [class]="'sm ' + class_prefix + '-' + SOCIAL_LINK.class_suffix"
+          aria-hidden="true"
+        ></div>
+      }
+      </a>
+    }
   </div>
 </header>

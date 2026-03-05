@@ -25,13 +25,13 @@
       text-align: center;
     }
 
-    .footer-getintouch {
+    button {
+      font-size: 1.4em;
       padding: 10px 20px;
       margin: 0 0 60px;
       max-height: 45px;
       border: 2px solid #fff;
       font-weight: 600;
-      transition: all ease-in-out 200ms;
 
       &:hover {
         border: 2px solid var(--site-color-01-hover);
@@ -97,7 +97,7 @@
         display: none;
       }
 
-      .footer-getintouch {
+      button {
         padding: 10px 15px 25px;
       }
 

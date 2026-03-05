@@ -4,3 +4,9 @@
   height: 100vh;
   overflow: hidden;
 }
+
+html {
+  overflow-y: scroll;
+  scroll-padding-top: 100px;
+  scroll-behavior: smooth;
+}
