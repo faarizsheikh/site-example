@@ -3,7 +3,7 @@
 import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {NgOptimizedImage} from '@angular/common';
-import {ROUTE_LINKS, WORKPAGE_LINKS} from '../../Shared/constants';
+import {ROUTE_LINKS, WORKPAGE_LINKS} from '../../shared/constants';
 
 @Component({
   selector: 'app-home',

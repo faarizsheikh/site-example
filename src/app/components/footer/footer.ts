@@ -9,7 +9,7 @@ import {
   ROUTE_LINKS_ARRAY,
   versionNum,
   WORKPAGE_LINKS
-} from '../../Shared/constants';
+} from '../../shared/constants';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({

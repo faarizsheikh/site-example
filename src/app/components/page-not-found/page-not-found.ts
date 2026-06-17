@@ -2,7 +2,7 @@
 
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {ROUTE_LINKS} from '../../Shared/constants';
+import {ROUTE_LINKS} from '../../shared/constants';
 
 @Component({
   selector: 'app-page-not-found',

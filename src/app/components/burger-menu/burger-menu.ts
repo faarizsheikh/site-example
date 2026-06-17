@@ -1,7 +1,7 @@
 // burger-menu.component.ts:
 
 import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
-import {currentYear, versionNum, class_prefix, SOCIAL_LINKS, ROUTE_LINKS_ARRAY} from '../../Shared/constants';
+import {currentYear, versionNum, class_prefix, SOCIAL_LINKS, ROUTE_LINKS_ARRAY} from '../../shared/constants';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 
 type NavItem = {

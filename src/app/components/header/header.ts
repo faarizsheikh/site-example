@@ -3,7 +3,7 @@
 import { Component, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import {class_prefix, NavItem, ROUTE_LINKS, ROUTE_LINKS_ARRAY, SOCIAL_LINKS} from '../../Shared/constants';
+import {class_prefix, NavItem, ROUTE_LINKS, ROUTE_LINKS_ARRAY, SOCIAL_LINKS} from '../../shared/constants';
 
 @Component({
   selector: 'app-header',

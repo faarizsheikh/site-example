@@ -4,8 +4,8 @@
 
 main {
   background-color: #1a253a;
-  background-image: url(../../../assets/Images/Background/faariz-bg.png),
-  url(../../../assets/Images/Background/brick.png);
+  background-image: url(../../../assets/images/background/faariz-bg.png),
+  url(../../../assets/images/background/brick.png);
   background-position: bottom left calc(50% + 80px), center;
   background-repeat: no-repeat;
   background-size: 70vh, cover;
@@ -85,15 +85,15 @@ main {
     }
 
     &:nth-child(2) {
-      background-image: url(../../../assets/Images/Categories/gaming.png);
+      background-image: url(../../../assets/images/categories/gaming.png);
     }
 
     &:nth-child(3) {
-      background-image: url(../../../assets/Images/Categories/web-development.png);
+      background-image: url(../../../assets/images/categories/web-development.png);
     }
 
     &:nth-child(4) {
-      background-image: url(../../../assets/Images/Categories/writing.png);
+      background-image: url(../../../assets/images/categories/writing.png);
     }
 
     .dark-overlay {
@@ -179,8 +179,8 @@ main {
 /** MOBILE VERSION **/
 @media only screen and (max-width: variables.$mobile-breakpoint) {
   main {
-    background-image: url(../../../assets/Images/Background/faariz-bg-1.png),
-    url(../../../assets/Images/Background/brick.png);
+    background-image: url(../../../assets/images/background/faariz-bg-darkened.png),
+    url(../../../assets/images/background/brick.png);
     background-position: bottom left calc(50% - 0px), center;
     background-size: 90vh, cover;
     align-items: flex-end;
@@ -227,15 +227,15 @@ main {
   }
 
   .index-category-box:nth-child(2) {
-    background-image: url(../../../assets/Images/Categories/gaming-small.png);
+    background-image: url(../../../assets/images/categories/gaming-small.png);
   }
 
   .index-category-box:nth-child(3) {
-    background-image: url(../../../assets/Images/Categories/web-development-small.png);
+    background-image: url(../../../assets/images/categories/web-development-small.png);
   }
 
   .index-category-box:nth-child(4) {
-    background-image: url(../../../assets/Images/Categories/writing-small.png);
+    background-image: url(../../../assets/images/categories/writing-small.png);
   }
 
   /* ABOUT */
