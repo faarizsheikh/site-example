@@ -19,17 +19,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 26
 
-      - run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-      - run: npx ng build --configuration production --base-href /site-example/
+      - name: Build Angular
+        run: npx ng build --configuration production --base-href /site-example/
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist/site-example/browser
 
@@ -41,4 +46,5 @@ jobs:
       name: github-pages
 
     steps:
-      - uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
