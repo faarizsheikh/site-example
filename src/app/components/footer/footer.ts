@@ -1,6 +1,6 @@
 // footer.component.ts:
 
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   CONTACT_INFO,
   currentYear,
@@ -20,6 +20,7 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
     RouterLinkActive
   ],
   templateUrl: './footer.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './footer.scss',
 })
 

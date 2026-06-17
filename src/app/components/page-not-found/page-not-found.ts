@@ -1,6 +1,6 @@
 // page-not-found.component.ts:
 
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {ROUTE_LINKS} from '../../Shared/constants';
 
@@ -11,6 +11,7 @@ import {ROUTE_LINKS} from '../../Shared/constants';
     RouterLink
   ],
   templateUrl: './page-not-found.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './page-not-found.scss',
 })
 

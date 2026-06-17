@@ -1,6 +1,6 @@
 // app.component.ts:
 
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {Header} from './components/header/header';
 import {Footer} from './components/footer/footer';
 import {BurgerMenu} from './components/burger-menu/burger-menu';
@@ -16,6 +16,7 @@ import {RouterOutlet} from '@angular/router';
     RouterOutlet
   ],
   templateUrl: './app.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss'
 })
 

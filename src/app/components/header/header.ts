@@ -1,6 +1,6 @@
 // header.ts:
 
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import {class_prefix, NavItem, ROUTE_LINKS, ROUTE_LINKS_ARRAY, SOCIAL_LINKS} from '../../Shared/constants';
@@ -10,6 +10,7 @@ import {class_prefix, NavItem, ROUTE_LINKS, ROUTE_LINKS_ARRAY, SOCIAL_LINKS} fro
   standalone: true,
   imports: [NgOptimizedImage, RouterLink, RouterLinkActive],
   templateUrl: './header.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './header.scss',
 })
 export class Header {

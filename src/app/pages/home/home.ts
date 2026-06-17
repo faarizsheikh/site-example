@@ -1,6 +1,6 @@
 //home.ts:
 
-import {Component} from '@angular/core';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {NgOptimizedImage} from '@angular/common';
 import {ROUTE_LINKS, WORKPAGE_LINKS} from '../../Shared/constants';
@@ -10,6 +10,7 @@ import {ROUTE_LINKS, WORKPAGE_LINKS} from '../../Shared/constants';
   standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     RouterLink,
     NgOptimizedImage

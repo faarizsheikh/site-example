@@ -1,12 +1,13 @@
 // contact.component.ts:
 
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
   imports: [],
   templateUrl: './contact.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './contact.scss',
 })
 
